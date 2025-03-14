@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slepicarna</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      background-color: dimgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+    .vrch {
+      color: white;
+      margin-top: 20px;
+      font-size: 35px;
+      align-self: center;
+    }
+    .hod {
+      position: fixed;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: lightgray;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 35px;
+    }
+    .hod:hover {
+      background-color: #ccc;
+    }
+    .hod:active {
+      opacity: 0.8;
+    }
+    .veci {
+      position: relative; /* Changed from absolute to relative */
+      margin-left: 15px;
+      text-align: left;
+      color: white;
+      font-size: 22px;
+    }
+    .hody {
+      font-size: 22px;
+      color: white;
+      position: absolute;
+      right: 20px;
+      top: 90px;
+    }
+    .kostky {
+      font-size: 22px;
+      color: white;
+      position: absolute;
+      right: 20px;
+      top: 135px; /* Move it below the "Hody" counter */
+    }
+    
+  </style>
+</head>
+<body>
+  <p class="vrch">Nasbírej 12 slepic</p>
+
+  <p class="hody">Hody: <span id="hody">0</span></p>
+
+
+<div class="kostky">
+  <p>Kostka 1: <span id="die1">0</span></p>
+  <p>Kostka 2: <span id="die2">0</span></p>
+</div>
+
+
+  <div class="veci">
+    <p>Vajca: <span id="vajca">0</span></p>
+    <p>Kuřata: <span id="kurata">0</span></p>
+    <p>Slepice: <span id="slepice">0</span></p>
+  </div>
+
+  <button class="hod" onclick="hod_kostkami()">Hoď</button>
+
+  <script>
+    let vajca = parseInt(localStorage.getItem('vajca')) || 0;
+    let kurata = parseInt(localStorage.getItem('kurata')) || 0;
+    let slepice = parseInt(localStorage.getItem('slepice')) || 0;
+    let hody = parseInt(localStorage.getItem('hody')) || 0;
+
+    function updateDisplay() {
+      document.getElementById('vajca').textContent = vajca;
+      document.getElementById('kurata').textContent = kurata;
+      document.getElementById('slepice').textContent = slepice;
+      document.getElementById('hody').textContent = hody;
+
+      localStorage.setItem('vajca', vajca);
+      localStorage.setItem('kurata', kurata);
+      localStorage.setItem('slepice', slepice);
+      localStorage.setItem('hody', hody);
+    }
+
+    function hod_kostkami() {
+      let die1 = Math.floor(Math.random() * 6) + 1;
+      let die2 = Math.floor(Math.random() * 6) + 1;
+  
+      document.getElementById('die1').textContent = die1;
+      document.getElementById('die2').textContent = die2;
+  
+      if (die1 <= 3) vajca++;
+      else if (die1 <= 5) kurata++;
+      else slepice++;
+  
+      if (die2 <= 3) vajca++;
+      else if (die2 <= 5) kurata++;
+      else slepice++;
+  
+      hody++;
+      updateDisplay();
+  
+      if (slepice >= 12) {
+          setTimeout(() => {
+              alert("Vyhrál jsi!");
+              resetGame();
+          }, 100);
+      }
+  }
+
+    function resetGame() {
+      vajca = 0;
+      kurata = 0;
+      slepice = 0;
+      hody = 0;
+      
+      document.getElementById('die1').textContent = "0";
+      document.getElementById('die2').textContent = "0";
+
+      updateDisplay();
+    }
+
+    updateDisplay();
+  </script>
+</body>
+</html>
