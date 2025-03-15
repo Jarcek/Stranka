@@ -63,6 +63,31 @@
       font-size: 22px;
       color: white;
     }
+    .vymena{
+      background-color: lightgray;
+      padding: 10px ;
+      border: none;
+      margin-bottom: 5px;
+      border-radius: 15px;
+      cursor: pointer; 
+    }
+    .vymena:hover{
+      background-color: #ccc;
+    }
+    .vymena:active{
+      opacity:0.8 ;
+    }
+    .button-container {
+      position: absolute;
+      bottom: 2%;
+      left: 30px;
+      
+      display: flex;
+      flex-direction: column; /* So the first button stays at the bottom */
+      gap: 10px;
+    }
+    
+
   </style>
 </head>
 <body>
@@ -81,6 +106,11 @@
   </div>
 
   <button class="hod" onclick="hod_kostkami()">Hoď</button>
+  <div class="button-container">
+    <button class="vymena" onclick="vymenaVajicek()">Vyměň 3 vajíčka -> 1 kuře</button>
+    <button class="vymena" onclick="vymenaKurat()">Vyměň 3 kuřata -> 1 slepici</button>  
+  </div>
+
 
   <script>
     let vajca = parseInt(localStorage.getItem('vajca')) || 0;
@@ -104,9 +134,7 @@
       let die1 = Math.floor(Math.random() * 6) + 1;
       let die2 = Math.floor(Math.random() * 6) + 1;
 
-      // Update the dice values in the HTML
-      //document.getElementById('die1').textContent = die1;
-      //document.getElementById('die2').textContent = die2;
+
 
       let message = `Hodil jsi: ${die1} & ${die2}`;
       document.getElementById('message').textContent = message;
@@ -129,6 +157,21 @@
               updateDisplay();
           }, 100);
       }
+    }
+
+    function vymenaVajicek(){
+      if(vajca>=3){
+        vajca-=3;
+        kurata++;
+      }
+      updateDisplay();
+    }
+    function vymenaKurat(){
+      if(kurata>=3){
+        kurata-=3;
+        slepice++;
+      }
+      updateDisplay();
     }
 
     function resetGame() {
