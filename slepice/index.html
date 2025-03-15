@@ -128,6 +128,14 @@
       localStorage.setItem('kurata', kurata);
       localStorage.setItem('slepice', slepice);
       localStorage.setItem('hody', hody);
+
+      if (slepice >= 12) {
+        setTimeout(() => {
+            alert("Vyhrál jsi!");
+            resetGame();
+            updateDisplay();
+        }, 100);
+    }
     }
 
     function hod_kostkami() {
@@ -150,13 +158,7 @@
       hody++;
       updateDisplay();
 
-      if (slepice >= 12) {
-          setTimeout(() => {
-              alert("Vyhrál jsi!");
-              resetGame();
-              updateDisplay();
-          }, 100);
-      }
+      
     }
 
     function vymenaVajicek(){
