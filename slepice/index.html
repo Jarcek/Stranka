@@ -148,12 +148,14 @@
     <p>Vajca: <span id="vajca">0</span></p>
     <p>Kuřata: <span id="kurata">0</span></p>
     <p>Slepice: <span id="slepice">0</span></p>
+    <p>Kohouti: <span id="kohouti">0</span></p>
   </div>
 
   <button class="hod" onclick="hod_kostkami()">Hoď</button>
   <div class="button-container">
     <button class="vymena" onclick="vymenaVajicek()">Vyměň 3 vajíčka -> 1 kuře</button>
-    <button class="vymena" onclick="vymenaKurat()">Vyměň 3 kuřata -> 1 slepici</button>  
+    <button class="vymena" onclick="vymenaKurat()">Vyměň 3 kuřata -> 1 slepici</button> 
+    <button class="vymena" onclick="vymenaSlepic()">Vyměň 2 slepice -> 1 kohouta</button> 
   </div>
 
 
@@ -161,17 +163,20 @@
     let vajca = parseInt(localStorage.getItem('vajca')) || 0;
     let kurata = parseInt(localStorage.getItem('kurata')) || 0;
     let slepice = parseInt(localStorage.getItem('slepice')) || 0;
+    let kohouti = parseInt(localStorage.getItem('kohouti')) || 0;
     let hody = parseInt(localStorage.getItem('hody')) || 0;
 
     function updateDisplay() {
       document.getElementById('vajca').textContent = vajca;
       document.getElementById('kurata').textContent = kurata;
       document.getElementById('slepice').textContent = slepice;
+      document.getElementById('kohouti').textContent = kohouti;
       document.getElementById('hody').textContent = hody;
 
       localStorage.setItem('vajca', vajca);
       localStorage.setItem('kurata', kurata);
       localStorage.setItem('slepice', slepice);
+      localStorage.setItem('kohouti', kohouti);
       localStorage.setItem('hody', hody);
 
       if (slepice >= 12) {
@@ -220,11 +225,19 @@
       }
       updateDisplay();
     }
+    function vymenaSlepic(){
+      if(slepice>=2){
+        slepice-=2;
+        kohouti++;
+      }
+      updateDisplay();
+    }
 
     function resetGame() {
       vajca = 0;
       kurata = 0;
       slepice = 0;
+      kohouti = 0;
       hody = 0;
 
       document.getElementById('message').textContent = "Hodil jsi: 0 & 0";
