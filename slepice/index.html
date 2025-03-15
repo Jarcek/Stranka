@@ -193,80 +193,74 @@
     }
 
     function hod_kostkami() {
-      let die1 = getRandom(1,6);
-      let die2 = getRandom(1,6);
-
-
-      
-
-
+      let die1 = getRandom(1, 6);
+      let die2 = getRandom(1, 6);
+  
       let message = `Hodil jsi: ${die1} & ${die2}.`;
-
-      if (die1 == die2) {  // Pokud jsou kostky stejné
-        switch (die1) {
-            case 1:
-                message += "<br>Dostáváš 3 vajíčka navíc.";
-                vajca += 3;
-                break;
-    
-            case 3:
-                message += "<br>Dostáváš 2 kuřata navíc.";
-                kurata += 2;
-                break;
-    
-            case 6:
-                message += "<br>Dostáváš 2 slepice navíc.";
-                slepice += 2;
-                break;
-    
-            case 2:
-            case 4:
-            case 5:
-                if (kohouti >= 1) {
-                    message += "<br>Kohout tě ochránil před neštěstím.";
-                    kohouti--;
-                } else {
-                    switch (die1) {
-                        case 2:
-                            message += "<br>Slepice rozsedly některé vajíčka.";
-                            let nahodne_cislo = getRandom(1, 6);
-                            vajca = Math.max(0, vajca - nahodne_cislo);
-                            break;
-                        case 4:
-                            message += "<br>Liška ti zabila všechna kuřata.";
-                            kurata = 0;
-                            break;
-                        case 5:
-                            if (slepice >= 3) {
-                                message += "<br>Vlk ti sežral 3 slepice.";
-                                slepice -= 3;
-                            } else {
-                                message += "<br>Máš tak málo slepic, že by se vlk ani nenajedl a nakonec odešel.";
-                            }
-                            break;
-                    }
-                }
-                return;  // Ukončíme, protože se už normální odměna nepřičítá
-        }
-    }
-    
-    // Normální přičítání vajec, kuřat a slepic, ale jen když se nestalo něco špatného
-    if (die1 <= 3) vajca++;
-    else if (die1 <= 5) kurata++;
-    else slepice++;
-    
-    if (die2 <= 3) vajca++;
-    else if (die2 <= 5) kurata++;
-    else slepice++;
-    
-    
-
+  
+      if (die1 == die2) {
+          switch (die1) {
+              case 1:
+                  message += "<br>Dostáváš 3 vajíčka navíc.";
+                  vajca += 5;
+                  break;
+  
+              case 3:
+                  message += "<br>Dostáváš 2 kuřata navíc.";
+                  kurata += 2;
+                  vajca+=2;
+                  break;
+  
+              case 6:
+                  message += "<br>Dostáváš 2 slepice navíc.";
+                  slepice += 4;
+                  break;
+  
+              case 2:
+              case 4:
+              case 5:
+                  if (kohouti >= 1) {
+                      message += "<br>Kohout tě ochránil před neštěstím.";
+                      kohouti--;
+                  } else {
+                      switch (die1) {
+                          case 2:
+                              message += "<br>Slepice rozsedly některé vajíčka.";
+                              let nahodne_cislo = getRandom(1, 6);
+                              vajca = Math.max(0, vajca - nahodne_cislo);
+                              break;
+                          case 4:
+                              message += "<br>Liška ti zabila všechna kuřata.";
+                              kurata = 0;
+                              break;
+                          case 5:
+                              if (slepice >= 3) {
+                                  message += "<br>Vlk ti sežral 3 slepice.";
+                                  slepice -= 3;
+                              } else {
+                                  message += "<br>Máš tak málo slepic, že by se vlk ani nenajedl a nakonec odešel.";
+                              }
+                              break;
+                      }
+                  }
+                  break;
+          }
+      } else {
+          
+          if (die1 <= 3) vajca++;
+          else if (die1 <= 5) kurata++;
+          else slepice++;
+  
+          if (die2 <= 3) vajca++;
+          else if (die2 <= 5) kurata++;
+          else slepice++;
+      }
+  
       hody++;
       document.getElementById('message').innerHTML = message;
       updateDisplay();
-
-      
-    }
+  }
+  
 
     function vymenaVajicek(){
       if(vajca>=3){
