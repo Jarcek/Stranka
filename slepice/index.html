@@ -53,7 +53,7 @@
       color: white;
       position: absolute;
       right: 20px;
-      top: 90px;
+      top: 50%;
     }
     .message {
       position: fixed;
@@ -94,13 +94,38 @@
         flex-direction: row;
         gap: 15px;
       }
+    }
     
-    
+    .grid_obrazky{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      margin:0 auto;
+      gap: 1%;
+      max-width: calc(100% - 30px);
+      padding-left: 14%;
+      padding-right: 5%;
+      
+    }
+    .grid_obrazky img {
+      object-position: center;
+      width: 100%; /* Make images fill the grid cells */
+      height: auto; /* Maintain aspect ratio */
+      max-width: 150px; /* Prevent images from getting too big */
+      object-fit: contain; /* Ensure images fit inside the grid */
+    }
 
   </style>
 </head>
 <body>
   <p class="vrch">Nasbírej 12 slepic</p>
+
+  <div class="grid_obrazky">
+    <img src="vajco.jpg" alt="vajco" style="max-width:30%">
+    <img src="kure.png" alt="kure">
+    <img src="slepice.png" alt="slepice">
+    <img src="kohout.png" alt="kohout">
+        
+  </div>
 
   <p class="hody">Hody: <span id="hody">0</span></p>
 
