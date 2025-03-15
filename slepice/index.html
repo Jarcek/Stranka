@@ -42,7 +42,7 @@
       opacity: 0.8;
     }
     .veci {
-      position: relative; /* Changed from absolute to relative */
+      position: relative;
       margin-left: 15px;
       text-align: left;
       color: white;
@@ -55,26 +55,23 @@
       right: 20px;
       top: 90px;
     }
-    .kostky {
+    .message {
+      position: fixed;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 22px;
       color: white;
-      position: absolute;
-      right: 20px;
-      top: 135px; /* Move it below the "Hody" counter */
     }
-    
   </style>
 </head>
 <body>
-  <p class="vrch">Nasbírej 122 slepic</p>
+  <p class="vrch">Nasbírej 12 slepic</p>
 
   <p class="hody">Hody: <span id="hody">0</span></p>
 
 
-<div class="kostky">
-  <p>Kostka 1: <span id="die1">0</span></p>
-  <p>Kostka 2: <span id="die2">0</span></p>
-</div>
+   <p class="message" id="message"></p>
 
 
   <div class="veci">
@@ -106,37 +103,41 @@
     function hod_kostkami() {
       let die1 = Math.floor(Math.random() * 6) + 1;
       let die2 = Math.floor(Math.random() * 6) + 1;
-  
-      document.getElementById('die1').textContent = die1;
-      document.getElementById('die2').textContent = die2;
-  
+
+      // Update the dice values in the HTML
+      //document.getElementById('die1').textContent = die1;
+      //document.getElementById('die2').textContent = die2;
+
+      let message = `Hodil jsi: ${die1} & ${die2}`;
+      document.getElementById('message').textContent = message;
+
       if (die1 <= 3) vajca++;
       else if (die1 <= 5) kurata++;
       else slepice++;
-  
+
       if (die2 <= 3) vajca++;
       else if (die2 <= 5) kurata++;
       else slepice++;
-  
+
       hody++;
       updateDisplay();
-  
+
       if (slepice >= 12) {
           setTimeout(() => {
               alert("Vyhrál jsi!");
               resetGame();
+              updateDisplay();
           }, 100);
       }
-  }
+    }
 
     function resetGame() {
       vajca = 0;
       kurata = 0;
       slepice = 0;
       hody = 0;
-      
-      document.getElementById('die1').textContent = "0";
-      document.getElementById('die2').textContent = "0";
+
+      document.getElementById('message').textContent = "Hodil jsi: 0 & 0";
 
       updateDisplay();
     }
