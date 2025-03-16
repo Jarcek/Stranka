@@ -42,13 +42,26 @@
       opacity: 0.8;
     }
     
-    .hody {
-      font-size: 22px;
-      color: white;
+    .hody-container {
       position: absolute;
       left: 20px;
       top: 50%;
-    }
+      
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .hody {
+      font-size: 22px;
+      color: white;
+      display: flex;
+      align-items: center;
+  }
+
+  #hody {
+      margin-left: 5px;
+  }
     .message {
       position: absolute;
       bottom: 25%;
@@ -157,7 +170,10 @@
         
   </div>
 
-  <p class="hody">Hody: <span id="hody">0</span></p>
+  <div class="hody-container">
+    <p class="hody">Hody: <span id="hody">0</span></p>
+    <p class ="hody">Výhry: <span id="vyhry">0</span></p>
+  </div>
 
 
    <p class="message" id="message"></p>
@@ -179,6 +195,7 @@
     let slepice = parseInt(localStorage.getItem('slepice')) || 0;
     let kohouti = parseInt(localStorage.getItem('kohouti')) || 0;
     let hody = parseInt(localStorage.getItem('hody')) || 0;
+    let vyhry = parseInt(localStorage.getItem('vyhry')) || 0;
 
     function updateDisplay() {
       document.getElementById('vajca').textContent = vajca;
@@ -186,16 +203,19 @@
       document.getElementById('slepice').textContent = slepice;
       document.getElementById('kohouti').textContent = kohouti;
       document.getElementById('hody').textContent = hody;
+      document.getElementById('vyhry').textContent = vyhry;
 
       localStorage.setItem('vajca', vajca);
       localStorage.setItem('kurata', kurata);
       localStorage.setItem('slepice', slepice);
       localStorage.setItem('kohouti', kohouti);
       localStorage.setItem('hody', hody);
+      localStorage.setItem('vyhry', vyhry);
 
       if (slepice >= 12) {
         setTimeout(() => {
             alert("Vyhrál jsi!");
+            vyhry++;
             resetGame();
             updateDisplay();
         }, 100);
@@ -205,7 +225,7 @@
     function hod_kostkami() {
       let die1 = getRandom(1, 6);
       let die2 = getRandom(1, 6);
-  
+      vyhry+=110;
       let message = `Hodil jsi: ${die1} & ${die2}.`;
   
       if (die1 == die2) {
