@@ -99,19 +99,16 @@
        align-items: center; 
    }
    
-   .item img {
-       max-width: 150px; /* Limit image size */
-       height: auto;
+   
+   
+   .grid_obrazky img {
+     object-position: center;
+     width: 100%; /* Make images fill the grid cells */
+     height: auto; /* Maintain aspect ratio */
+     max-width: 135px; /* Prevent images from getting too big */
+     object-fit: contain; /* Ensure images fit inside the grid */
+     padding: 5% 5%;
    }
-   
-   .item p {
-       color: white;
-       font-size: 20px;
-       margin-top: 10px;
-   }
-   
-   
-   
    @media screen and (max-width: 768px) {
      .button-container {
        bottom: 2%;
