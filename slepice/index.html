@@ -41,13 +41,7 @@
     .hod:active {
       opacity: 0.8;
     }
-    .veci {
-      position: relative;
-      margin-left: 15px;
-      text-align: left;
-      color: white;
-      font-size: 22px;
-    }
+    
     .hody {
       font-size: 22px;
       color: white;
@@ -84,50 +78,72 @@
       left: 30px;
       
       display: flex;
-      flex-direction: column; /* So the first button stays at the bottom */
+      flex-direction: column;
       gap: 10px;
     }
     
     
-    .grid_obrazky{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      margin:0 auto;
-      gap: 150px;
-      max-width: calc(100% - 30px);
-      padding-left: 15%;
-      padding-right: 15%;
+    .grid_obrazky {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1%; /* Adjust spacing */
+      justify-items: center; /* Center align content */
+      text-align: center;
       
-    }
-    .grid_obrazky img {
-      object-position: center;
-      width: 100%; /* Make images fill the grid cells */
-      height: auto; /* Maintain aspect ratio */
-      max-width: 150px; /* Prevent images from getting too big */
-      object-fit: contain; /* Ensure images fit inside the grid */
-    }
-    @media screen and (max-width: 768px) {
-      .button-container {
-        bottom: 2%;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: row;
-        gap: 15px;
-        width:90%;
-        
-      }
-      .grid_obrazky{
-        display:grid;
-        grid-template-columns:repeat(4, 1fr);
-        margin:0 auto;
-        gap: 5%;
-        max-width: calc(100% - 30px);
-        padding-left: 15%;
-        padding-right: 15%;
-      }
-      
-      
-    }
+   }
+  
+   .item {
+       display: flex;
+       flex-direction: column; /* Stack image and text vertically */
+       align-items: center; 
+   }
+   
+   .item img {
+       max-width: 150px; /* Limit image size */
+       height: auto;
+   }
+   
+   .item p {
+       color: white;
+       font-size: 20px;
+       margin-top: 10px;
+   }
+   
+   .grid_obrazky img {
+     object-position: center;
+     width: 100%; /* Make images fill the grid cells */
+     height: auto; /* Maintain aspect ratio */
+     max-width: 135px; /* Prevent images from getting too big */
+     object-fit: contain; /* Ensure images fit inside the grid */
+   }
+   @media screen and (max-width: 768px) {
+     .button-container {
+       bottom: 2%;
+       left: 50%;
+       transform: translateX(-50%);
+       flex-direction: row;
+       gap: 15px;
+       width:90%;
+       
+     }
+     .grid_obrazky{
+       display:grid;
+       grid-template-columns:repeat(4, 1fr);
+       margin:0 auto;
+       gap: 5%;
+       max-width: calc(100% - 30px);
+       padding-left: 15%;
+       padding-right: 15%;
+     }
+     .veci {
+       position: relative;
+       margin-left: 15px;
+       text-align: left;
+       color: white;
+       font-size: 22px;  
+     }
+       
+   }
 
   </style>
 </head>
@@ -135,10 +151,25 @@
   <p class="vrch">Nasbírej 12 slepic</p>
 
   <div class="grid_obrazky">
-    <img src="vajco.jpg" alt="vajco">
-    <img src="kure.png" alt="kure">
-    <img src="slepice.png" alt="slepice">
-    <img src="kohout.png" alt="kohout">
+    <div class="item">
+        <img src="vajco.jpg" alt="vajco">
+        <p>Vajca: <span id="vajca">0</span></p>
+    </div>
+    <div class="item">
+        <img src="kure.png" alt="kure">
+        <p>Kuřata: <span id="kurata">0</span></p>
+    </div>
+    <div class="item">
+        <img src="slepice.png" alt="slepice">
+        <p>Slepice: <span id="slepice">0</span></p>
+    </div>
+    <div class="item">
+        <img src="kohout.png" alt="kohout">
+        <p>Kohouti: <span id="kohouti">0</span></p>
+    </div>
+</div>
+
+    
         
   </div>
 
@@ -148,12 +179,7 @@
    <p class="message" id="message"></p>
 
 
-  <div class="veci">
-    <p>Vajca: <span id="vajca">0</span></p>
-    <p>Kuřata: <span id="kurata">0</span></p>
-    <p>Slepice: <span id="slepice">0</span></p>
-    <p>Kohouti: <span id="kohouti">0</span></p>
-  </div>
+  
 
   <button class="hod" onclick="hod_kostkami()">Hoď</button>
   <div class="button-container">
