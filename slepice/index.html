@@ -208,6 +208,21 @@
     let nejmene = parseInt(localStorage.getItem('nejmene')) || Infinity;
 
     let gameOver = false;
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();})
+
+      document.addEventListener("keydown", function(e) {
+        
+        if (e.key === "F12") {
+            e.preventDefault();
+            
+        }
+        
+        if (e.ctrlKey && e.key === "u") {
+            e.preventDefault();
+            
+        }
+    });
 
     document.addEventListener('click', function playMusic() {
         let audio = document.getElementById("bg-music");
@@ -335,7 +350,8 @@
   
 
   function checkPIN() {
-    let correctPIN = "4865"; // Change this to your PIN
+    
+    var _0x1234 = ["4865"]; let correctPIN = _0x1234[0];
     let userPIN = prompt("Enter PIN:");
 
     if (userPIN !== correctPIN) {
@@ -346,6 +362,7 @@
       document.body.style.visibility="visible";
     }
 
+    
 }
     function vymenaVajicek(){
       if(vajca>=3){
