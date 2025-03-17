@@ -102,8 +102,8 @@
     .grid_obrazky {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1% ; /* Adjust spacing */
-      justify-items: center; /* Center align content */
+      gap: 1% ; 
+      justify-items: center; 
       text-align: center;
       
    }
@@ -111,7 +111,7 @@
   
    .item {
        display: flex;
-       flex-direction: column; /* Stack image and text vertically */
+       flex-direction: column;
        align-items: center; 
        color: white;
        font-size: 20px;
@@ -125,10 +125,10 @@
    
    .grid_obrazky img {
      object-position: center;
-     width: 100%; /* Make images fill the grid cells */
-     height: 150px; /* Maintain aspect ratio */
-     max-width: 150px; /* Prevent images from getting too big */
-     object-fit: contain; /* Ensure images fit inside the grid */
+     width: 100%; 
+     height: 150px; 
+     max-width: 150px; 
+     object-fit: contain;
      
    }
    @media screen and (max-width: 768px) {
@@ -176,6 +176,7 @@
   <div class="hody-container">
     <p class="hody">Hody: <span id="hody">0</span></p>
     <p class ="hody">Výhry: <span id="vyhry">0</span></p>
+    <p class="hody">Nejmene: <span id="nejmene"></span></p>
   </div>
 
 
@@ -202,6 +203,19 @@
     let kohouti = parseInt(localStorage.getItem('kohouti')) || 0;
     let hody = parseInt(localStorage.getItem('hody')) || 0;
     let vyhry = parseInt(localStorage.getItem('vyhry')) || 0;
+    let nejmene = parseInt(localStorage.getItem('nejmene')) || Infinity;
+
+
+    document.addEventListener('click', function playMusic() {
+        let audio = document.getElementById("bg-music");
+
+
+        if (audio.paused) {
+            audio.play().catch(error => console.log(error));
+        }
+
+
+        document.removeEventListener('click', playMusic)});
 
 
     document.addEventListener('click', function playMusic() {
@@ -222,6 +236,8 @@
       document.getElementById('kohouti').textContent = kohouti;
       document.getElementById('hody').textContent = hody;
       document.getElementById('vyhry').textContent = vyhry;
+      document.getElementById('nejmene').textContent = nejmene;
+
 
       localStorage.setItem('vajca', vajca);
       localStorage.setItem('kurata', kurata);
@@ -229,11 +245,17 @@
       localStorage.setItem('kohouti', kohouti);
       localStorage.setItem('hody', hody);
       localStorage.setItem('vyhry', vyhry);
+      localStorage.setItem('nejmene', nejmene);
+
+      
 
       if (slepice >= 12) {
         setTimeout(() => {
             alert("Vyhrál jsi!");
             vyhry++;
+            if(nejmene>hody&&hody>0){
+              nejmene=hody;
+            }
             resetGame();
             updateDisplay();
         }, 100);
@@ -241,6 +263,8 @@
     }
 
     function hod_kostkami() {
+
+      
       let die1 = getRandom(1, 6);
       let die2 = getRandom(1, 6);
       vyhry=0;
@@ -263,10 +287,6 @@
                   message += "<br>Dostáváš 2 slepice navíc.";
                   slepice += 4;
                   break;
-  
-              case 2:
-              case 4:
-              case 5:
                   if (kohouti >= 1) {
                       message += "<br>Kohout tě ochránil před neštěstím.";
                       kohouti--;
@@ -305,7 +325,7 @@
       }
   
       hody++;
-      document.getElementById('message').innerHTML = message;
+      document.getElementById('message').innerHTML = message;  
       updateDisplay();
   }
   
