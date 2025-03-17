@@ -16,6 +16,7 @@
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: auto;
+      visibility: hidden;
     }
     .vrch {
       color: white;
@@ -147,7 +148,8 @@
 
   </style>
 </head>
-<body>
+<body onload="checkPIN()">
+  
   <p class="vrch">Nasbírej 12 slepic</p>
 
   <div class="grid_obrazky">
@@ -332,6 +334,19 @@
   }
   
 
+  function checkPIN() {
+    let correctPIN = "4865"; // Change this to your PIN
+    let userPIN = prompt("Enter PIN:");
+
+    if (userPIN !== correctPIN) {
+        alert("Wrong PIN! Access Denied.");
+        document.body.innerHTML = ""; // Clear content
+    }
+    if(userPIN==correctPIN){
+      document.body.style.visibility="visible";
+    }
+
+}
     function vymenaVajicek(){
       if(vajca>=3){
         vajca-=3;
