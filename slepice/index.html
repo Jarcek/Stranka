@@ -61,7 +61,7 @@
       margin: 3px;
   }
 
-  #hody, #vyhry {
+  #hody, #vyhry, #nejmene {
       margin-left: 5px;
       padding-left: 0;
       
@@ -178,7 +178,7 @@
   <div class="hody-container">
     <p class="hody">Hody: <span id="hody">0</span></p>
     <p class ="hody">Výhry: <span id="vyhry">0</span></p>
-    <p class="hody">Nejmene: <span id="nejmene"></span></p>
+    <p class="hody">Nejmene: <span id="nejmene">Infinity</span></p>
   </div>
 
 
@@ -283,7 +283,7 @@
 
     function hod_kostkami() {
 
-      nejmene=7;
+      
       let die1 = getRandom(1, 6);
       let die2 = getRandom(1, 6);
       
