@@ -205,6 +205,7 @@
     let vyhry = parseInt(localStorage.getItem('vyhry')) || 0;
     let nejmene = parseInt(localStorage.getItem('nejmene')) || Infinity;
 
+    let gameOver = false;
 
     document.addEventListener('click', function playMusic() {
         let audio = document.getElementById("bg-music");
@@ -249,7 +250,8 @@
 
       
 
-      if (slepice >= 12 && hody>0) {
+      if (slepice >= 12 && !gameOver) {
+        gameOver = true;
         setTimeout(() => {
             alert("Vyhrál jsi!");
             vyhry++;
@@ -358,6 +360,7 @@
       slepice = 0;
       kohouti = 0;
       hody = 0;
+      gameOver = false;
 
       document.getElementById('message').textContent = "Hodil jsi: 0 & 0";
 
