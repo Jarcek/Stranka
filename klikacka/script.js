@@ -1,8 +1,15 @@
-let vajca = parseInt(localStorage.getItem('vajca')) || 0;
+let pocet = parseInt(localStorage.getItem('pocet')) || 0;
 
 
 function updateDisplay(){
-  document.getElementById('vajca').textContent = vajca;
+  document.getElementById('pocet').textContent = pocet;
 
-  localStorage.setItem('vajca', vajca);
+  localStorage.setItem('pocet', pocet);
 }
+
+function kliknuti(){
+  pocet++
+  updateDisplay()
+}
+
+updateDisplay()

@@ -1,6 +1,8 @@
 html, body {
   margin: 0;
-  padding: 0.4vh;
+  padding: 0;
+  padding-left: 0.4vh;
+  padding-right: 0.4vh;
   height: 100%;
 }
 body {
@@ -11,20 +13,25 @@ body {
   overflow-y: auto;
   
 }
-.klikaci_cast{
-  border-radius: 1vh;
-  background-color: aqua;
-  height: 37vh;
-  margin-top: 1vh;
-}
+
 .stavova_cast{
   border-radius: 1vh;
   margin-top: 1vh;
   margin-right: 10vh;
   background-color: blueviolet;
   height: 8vh;
-  font-size: 4vh;
   color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.klikaci_cast{
+  border-radius: 1vh;
+  background-color: aqua;
+  height: 37vh;
+  margin-top: 1vh;
 }
 .nakupni_cast{
   border-radius: 1vh;
@@ -36,7 +43,7 @@ body {
 .zpatky {
   position: absolute;
   right: 1vh;
-  top: 3vh; /* Adjust position */
+  top: 2vh;
   
   background-color: steelblue;
   color: white;
@@ -52,4 +59,9 @@ body {
 a {
   text-decoration: none;
 }
-
+.informace_kliknuti{
+  font-size: 3.5vh;
+}
+.infrormace_sec{
+  font-size: 3vh;
+}

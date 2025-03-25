@@ -7,19 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="zpatky" href="..">&#8617</a>
   <div class="stavova_cast">
-    <label>tady</label>
-    <a class="zpatky" href="..">&#8617</a>
-    
+    <label class="informace_kliknuti">1/click</span></label>
+    <label class="informace_sec">250/sec</label>
   </div>
 
-  <div class="klikaci_cast">
+  <div class="klikaci_cast" onclick="kliknuti()">
     <label>tady</label>
     <label>neco jineho</label>
   </div>
 
   <div class="nakupni_cast">
-    <label>neco jineho</label>
+    <!-- <label>neco jineho</label> -->
+    <label id="pocet">0</label>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
