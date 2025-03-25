@@ -28,13 +28,19 @@ body {
   height: 50vh;
   
 }
-.zpatky{
+.zpatky {
   position: absolute;
-  right: 4vh;
-  top: 2vh;
-  font-size: 5vh;
-  color: rgb(102, 34, 165);
+  right: 1vh;
+  top: 3vh; /* Adjust position */
+  
+  background-color: steelblue;
+  color: white;
+  padding: 1vh 3vh;
+  font-size: 3vh;
+  border-radius: 15px;
+  text-decoration: none;
 }
+
 a {
   text-decoration: none;
 }
