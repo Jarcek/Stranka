@@ -26,3 +26,6 @@ body {
   position: absolute;
   right: 4vh;
 }
+a {
+  text-decoration: none;
+}
