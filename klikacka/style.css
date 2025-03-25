@@ -39,6 +39,9 @@ body {
   font-size: 3vh;
   border-radius: 15px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
