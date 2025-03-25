@@ -1,0 +1,22 @@
+body {
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.klikaci_cast{
+  background-color: aqua;
+  height: 38vh;
+}
+.stavova_cast{
+  margin-top: 1vh;
+  background-color: blueviolet;
+  height: 8vh;
+}
+.nakupni_cast{
+  margin-top: 1vh;
+  background-color: yellowgreen;
+  height: 50vh;
+  margin-bottom: 1vh;
+}
