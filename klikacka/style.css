@@ -8,7 +8,8 @@ body {
 }
 .klikaci_cast{
   background-color: aqua;
-  height: 38vh;
+  height: 37vh;
+  margin-top: 1vh;
 }
 .stavova_cast{
   margin-top: 1vh;
@@ -20,7 +21,7 @@ body {
 .nakupni_cast{
   margin-top: 1vh;
   background-color: yellowgreen;
-  height: 52vh;
+  height: 50vh;
   
 }
 .zpatky{
