@@ -11,6 +11,7 @@ body {
 }
 .stavova_cast{
   margin-top: 1vh;
+  margin-right: 10vh;
   background-color: blueviolet;
   height: 8vh;
   font-size: 4vh;
@@ -20,4 +21,8 @@ body {
   background-color: yellowgreen;
   height: 52vh;
   
+}
+.zpatky{
+  position: absolute;
+  right: 4vh;
 }
