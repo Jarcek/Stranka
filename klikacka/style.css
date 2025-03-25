@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .klikaci_cast{
   border-radius: 1vh;
