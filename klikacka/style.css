@@ -18,7 +18,7 @@ body {
 .stavova_cast{
   border-radius: 1vh;
   margin-top: 1vh;
-  margin-right: 10vh;
+  margin-right: 9vh;
   background-color: blueviolet;
   height: 8vh;
   color: aliceblue;
@@ -109,6 +109,7 @@ a {
 
 .open_btn {
   position:absolute;
+  margin-bottom: 1vh;
   right: 1vh;
   top: 1vh;
   background: #333;
@@ -118,8 +119,8 @@ a {
   font-size: 30px;
   cursor: pointer;
   border-radius: 1vh;
-  width: 8.5vh;
-  height: 7.5vh;
+  width: 8vh;
+  height: 8vh;
 }
 
 .close_btn {
