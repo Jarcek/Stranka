@@ -27,16 +27,34 @@ body {
   display: flex;
   flex-direction: column;
 }
+.pocty{
+  background-color: goldenrod;
+  margin-top: 1vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 5vh;
+  border-radius: 1vh;
+  color: aliceblue;
+  font-size: larger;
+  
+}
 .klikaci_cast{
   border-radius: 1vh;
-  background-color: aqua;
+  background-color:goldenrod;
   height: 37vh;
   margin-top: 1vh;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-size: 5vh;
+  font-weight: bold;
+  
 }
 .nakupni_cast{
   border-radius: 1vh;
   margin-top: 1vh;
-  background-color: yellowgreen;
+  background-color: goldenrod;
   height: 50vh;
   
 }
