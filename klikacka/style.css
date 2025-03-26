@@ -113,7 +113,10 @@ a {
   background: #333;
   color: white;
   border: none;
-  
+  display: flex;
+  height: 8vh;
+  width: 8vh;
+  justify-content: center;
   font-size: 5vh;
   cursor: pointer;
   border-radius: 1vh;
