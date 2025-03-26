@@ -114,10 +114,7 @@ a {
   color: white;
   border: none;
   font-size: 5vh;
-  padding-top: .15vh;
-  padding-bottom: .95vh;
-  padding-left: 1.5vh;
-  padding-right: 1.5vh;
+  
   cursor: pointer;
   border-radius: 1vh;
 }
@@ -149,3 +146,21 @@ a {
 .dark-mode .sidebar {
   background-color: #222;
 }
+@media screen and (min-width: 768px) {
+  .open_btn {
+    position:absolute;
+    right: 1vh;
+    top: 1vh;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 5vh;
+    padding-top: .15vh;
+    padding-bottom: .95vh;
+    padding-left: 1.5vh;
+    padding-right: 1.5vh;
+    cursor: pointer;
+    border-radius: 1vh;
+    
+  }
+ }
