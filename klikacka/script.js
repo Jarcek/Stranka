@@ -12,4 +12,16 @@ function kliknuti(){
   updateDisplay()
 }
 
+function toggleSidebar() {
+  let sidebar = document.getElementById("sidebar");
+  
+  if (sidebar.style.right === "0px") {
+    sidebar.style.right = "-250px"; // Hide
+    open_btn.style.display = "block";
+  } else {
+    sidebar.style.right = "0px"; // Show
+    open_btn.style.display = "none"; // Hide ☰ button
+  }
+}
+
 updateDisplay()
