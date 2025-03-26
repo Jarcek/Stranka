@@ -16,7 +16,7 @@ body {
 .stavova_cast{
   border-radius: 1vh;
   margin-top: 1vh;
-  margin-right: 8.5vh;
+  margin-right: 9vh;
   background-color: #333;
   height: 8vh;
   color: aliceblue;
@@ -113,8 +113,9 @@ a {
   background: #333;
   color: white;
   border: none;
-  font-size: 5vh;
-  
+  height: 8vh;
+  width: 8vh;
+  font-size: large;
   cursor: pointer;
   border-radius: 1vh;
 }
