@@ -1,14 +1,24 @@
 let pocet = parseInt(localStorage.getItem('pocet')) || 0;
-
+let pridavaniPocet = parseInt(localStorage.getItem('pridavaniPocet')) || 1
 
 function updateDisplay(){
   document.getElementById('pocet').textContent = pocet;
+  document.getElementById('pridavaniPocet').textContent = pridavaniPocet;
 
   localStorage.setItem('pocet', pocet);
+  localStorage.setItem('pridavaniPocet', pridavaniPocet);
 }
 
 function kliknuti(){
-  pocet++
+  pocet+=pridavaniPocet;
+  updateDisplay()
+}
+
+function upgradeK1(){
+  if(pocet>=40){
+    pocet-=40;
+    pridavaniPocet++;
+  }
   updateDisplay()
 }
 
