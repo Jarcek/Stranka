@@ -16,7 +16,7 @@ function toggleSidebar() {
   let sidebar = document.getElementById("sidebar");
   
   if (sidebar.style.right === "0px") {
-    sidebar.style.right = "-250px"; // Hide
+    sidebar.style.right = "-55vw"; // Hide
     open_btn.style.display = "block";
   } else {
     sidebar.style.right = "0px"; // Show
