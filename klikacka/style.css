@@ -108,12 +108,12 @@ a {
 
 .open_btn {
   position:absolute;
-  margin-bottom: 1vh;
   right: 1vh;
   top: 1vh;
   background: #333;
   color: white;
   border: none;
+  padding: 10px 15px;
   font-size: 30px;
   cursor: pointer;
   border-radius: 1vh;
