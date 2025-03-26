@@ -12,14 +12,12 @@ body {
   justify-content: flex-start;
   overflow-y: auto;
   font-family: Arial, sans-serif;
-  
 }
-
 .stavova_cast{
   border-radius: 1vh;
   margin-top: 1vh;
   margin-right: 9vh;
-  background-color: blueviolet;
+  background-color: #333;
   height: 8vh;
   color: aliceblue;
   align-items: center;
@@ -50,13 +48,13 @@ body {
   color: aliceblue;
   font-size: 5vh;
   font-weight: bold;
-  
 }
 .nakupni_cast{
   border-radius: 1vh;
   margin-top: 1vh;
   background-color: goldenrod;
   height: 50vh;
+  color: aliceblue;
   
 }
 .zpatky {
@@ -94,7 +92,7 @@ a {
   color: white;
   padding-top: 5vh;
   transition: right 0.3s ease;
-  
+
 }
 
 .sidebar a {
@@ -133,4 +131,21 @@ a {
   color: white;
   font-size: 20px;
   cursor: pointer;
+}
+
+/* Dark Theme */
+.dark-mode{
+  color: aliceblue;
+}
+.dark-mode .klikaci_cast,
+.dark-mode .nakupni_cast,
+.dark-mode .pocty,
+.dark-mode a {
+  color: black;
+}
+.sidebar a {
+  color: white;
+}
+.dark-mode .sidebar {
+  background-color: #222;
 }
