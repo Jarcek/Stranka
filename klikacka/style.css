@@ -113,9 +113,8 @@ a {
   background: #333;
   color: white;
   border: none;
-  height: 8vh;
   width: 8vh;
-  font-size: large;
+  font-size: 5vh;
   cursor: pointer;
   border-radius: 1vh;
 }
