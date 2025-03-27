@@ -108,16 +108,22 @@ a {
 }
 
 .open_btn {
-  position:absolute;
+  position: absolute; /* Keeps it positioned relative to the parent */
   right: 1vh;
-  top: 1vh;
+  top: 1vh; /* Adjust if necessary */
   background: #333;
   color: white;
+  border: none;
+  display: flex;
   height: 8vh;
   width: 8vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 5vh;
+  cursor: pointer;
   border-radius: 1vh;
-  outline: none;
-  
+  margin-bottom: 1vh; /* Ensures it aligns with other elements like stavova_cast */
 }
 
 .close_btn {
