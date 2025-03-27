@@ -1,12 +1,15 @@
 let pocet = parseInt(localStorage.getItem('pocet')) || 0;
 let pridavaniPocet = parseInt(localStorage.getItem('pridavaniPocet')) || 1
+let pridavaniS = parseInt(localStorage.getItem('pridavaniS')) || 0
 
 function updateDisplay(){
-  document.getElementById('pocet').textContent = pocet;
+  document.getElementById('pocet').textContent = Math.round(pocet).toLocaleString("cs-CZ");
   document.getElementById('pridavaniPocet').textContent = pridavaniPocet;
+  document.getElementById('pridavaniS').textContent = pridavaniS;
 
   localStorage.setItem('pocet', pocet);
   localStorage.setItem('pridavaniPocet', pridavaniPocet);
+  localStorage.setItem('pridavaniS', pridavaniS);
 }
 
 function kliknuti(){
@@ -18,6 +21,13 @@ function upgradeK1(){
   if(pocet>=40){
     pocet-=40;
     pridavaniPocet++;
+  }
+  updateDisplay()
+}
+function upgradeS1(){
+  if(pocet>=100){
+    pocet-=100;
+    pridavaniS++;
   }
   updateDisplay()
 }
@@ -59,4 +69,12 @@ const toggleButton = document.getElementById('theme-toggle');
 toggleButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+
+
+function addValue() {
+  pocet+=pridavaniS/4;
+  document.getElementById("pocet").innerText = Math.round(pocet).toLocaleString("cs-CZ");  
+}
+
+setInterval(addValue, 250);  //  1 second (1000ms)
 updateDisplay()

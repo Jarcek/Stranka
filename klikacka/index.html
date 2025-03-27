@@ -22,8 +22,8 @@
   
 <div class="pomocne">
   <div class="stavova_cast">
-    <label class="informace_kliknuti"><span id="pridavaniPocet">1</span> /click</span></label>
-    <label class="informace_sec">1000/sec</label>
+    <label class="informace_kliknuti"><span id="pridavaniPocet">1</span>/click</span></label>
+    <label class="informace_sec"><span id="pridavaniS">0</span>/sec</label>
   </div>
   <button id="open_btn" class="open_btn" onclick="toggleSidebar()">☰</button>
 </div>
@@ -31,13 +31,14 @@
 <div class="pocty" id="pocet">0</div>
   
   <div class="klikaci_cast" onclick="kliknuti()">
-    <label>klikej ds</label>
+    <label>klikej</label>
   </div>
 
   <div class="nakupni_cast">
     <!-- <label>neco jineho</label> -->
     <label>nic</label>
     <button onclick="upgradeK1()">40 => +1</button>
+    <button onclick="upgradeS1()">100 => +1</button>
   </div>
   <script src="script.js"></script>
 </body>
