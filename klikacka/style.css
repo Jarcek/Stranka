@@ -25,6 +25,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  
 }
 .pocty{
   background-color: goldenrod;
@@ -110,7 +111,8 @@ a {
 .open_btn {
   position: absolute; /* Keeps it positioned relative to the parent */
   right: 1vh;
-  top: 1vh; /* Adjust if necessary */
+  margin-top: 1vh; /* Adjust if necessary */
+  
   background: #333;
   color: white;
   border: none;
@@ -123,7 +125,7 @@ a {
   font-size: 5vh;
   cursor: pointer;
   border-radius: 1vh;
-  margin-bottom: 1vh; /* Ensures it aligns with other elements like stavova_cast */
+   /* Ensures it aligns with other elements like stavova_cast */
 }
 
 .close_btn {
@@ -168,3 +170,4 @@ a {
     
   }
  }
+ 
