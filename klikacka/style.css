@@ -15,7 +15,7 @@ body {
 }
 .stavova_cast{
   border-radius: 1vh;
-  margin-top: 1vh;
+  /* margin-top: 1vh; */
   margin-right: 10vh;
   background-color: #333;
   height: 8vh;
@@ -111,14 +111,14 @@ a {
 .open_btn {
   position: absolute; /* Keeps it positioned relative to the parent */
   right: 1vh;
-  margin-top: 1vh; /* Adjust if necessary */
+  /* margin-top: 1vh; Adjust if necessary */
   
   background: #333;
   color: white;
   border: none;
   display: flex;
-  height: 4rem;
-  width: 4rem;
+  height: 8vh;
+  width: 8vh;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -170,4 +170,15 @@ a {
     
   }
  }
- 
+ .pomocne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1vh;
+  width: 100%;
+}
+
+.stavova_cast {
+  flex-grow: 1;  /* This makes it expand */
+  margin-right: 2vh; /* Space before the button */
+}
