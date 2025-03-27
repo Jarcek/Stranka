@@ -35,7 +35,8 @@ body {
   height: 5vh;
   border-radius: 1vh;
   color: aliceblue;
-  font-size: larger;
+  font-size: 3.5vh;
+  font-weight: bold;
   
 }
 .klikaci_cast{
@@ -116,7 +117,9 @@ a {
   display: flex;
   height: 8vh;
   width: 8vh;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 5vh;
   cursor: pointer;
   border-radius: 1vh;
