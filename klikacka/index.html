@@ -35,10 +35,16 @@
   </div>
 
   <div class="nakupni_cast">
-    <!-- <label>neco jineho</label> -->
-    <label>nic</label>
-    <button onclick="upgradeK1()">40 => +1</button>
-    <button onclick="upgradeS1()">100 => +1</button>
+    <div class="nakupni_zona">
+      <div class="nakup_pole" onclick="upgradeK1()">
+        <label>40 → +1/click</label>
+        <span id="upgradeK1P">0</span>
+      </div>
+      <div class="nakup_pole" onclick="upgradeS1()">
+        <label>100 → +1/sec</label>
+        <span id="upgradeS1P">0</span>
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>

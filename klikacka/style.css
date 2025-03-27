@@ -109,10 +109,8 @@ a {
 }
 
 .open_btn {
-  position: absolute; /* Keeps it positioned relative to the parent */
+  position: absolute;
   right: 1vh;
-  /* margin-top: 1vh; Adjust if necessary */
-  
   background: #333;
   color: white;
   border: none;
@@ -125,7 +123,6 @@ a {
   font-size: 5vh;
   cursor: pointer;
   border-radius: 1vh;
-   /* Ensures it aligns with other elements like stavova_cast */
 }
 
 .close_btn {
@@ -155,22 +152,8 @@ a {
 .dark-mode .sidebar {
   background-color: #222;
 }
-@media screen and (min-width: 768px) {
-  .open_btn {
-    position:absolute;
-    right: 1vh;
-    top: 1vh;
-    background: #333;
-    color: white;
-    border: none;
-    font-size: 40px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 1vh;
-    
-  }
- }
- .pomocne {
+
+.pomocne {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,4 +164,20 @@ a {
 .stavova_cast {
   flex-grow: 1;
   margin-right: 2vh;
+}
+.nakupni_zona{
+  margin: 1vh;
+  border-radius: 1vh;
+  height:46vh;
+  background-color:darkslategrey;
+}
+.nakup_pole{
+  font-weight: bolder;
+  background-color: aliceblue;
+  border-radius: 1vh;
+  margin: .5vh;
+  padding: .5vh 2vh;
+  color: black;
+  display: flex;
+  justify-content: space-between;
 }

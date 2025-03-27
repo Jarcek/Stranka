@@ -2,25 +2,42 @@ let pocet = parseInt(localStorage.getItem('pocet')) || 0;
 let pridavaniPocet = parseInt(localStorage.getItem('pridavaniPocet')) || 1
 let pridavaniS = parseInt(localStorage.getItem('pridavaniS')) || 0
 
+let upgradeK1P = parseInt(localStorage.getItem('upgradeK1P')) || 0
+let upgradeS1P = parseInt(localStorage.getItem('upgradeS1P')) || 0
+
+
 function updateDisplay(){
   document.getElementById('pocet').textContent = Math.round(pocet).toLocaleString("cs-CZ");
   document.getElementById('pridavaniPocet').textContent = pridavaniPocet;
   document.getElementById('pridavaniS').textContent = pridavaniS;
 
+  document.getElementById('upgradeK1P').textContent = upgradeK1P;
+  document.getElementById('upgradeS1P').textContent = upgradeS1P;
+
+
   localStorage.setItem('pocet', pocet);
   localStorage.setItem('pridavaniPocet', pridavaniPocet);
   localStorage.setItem('pridavaniS', pridavaniS);
+
+  localStorage.setItem('upgradeK1P', upgradeK1P);
+  localStorage.setItem('upgradeS1P', upgradeS1P);
 }
 
 function kliknuti(){
   pocet+=pridavaniPocet;
   updateDisplay()
+
+  pridavaniPocet=1;
+  pridavaniS=0;
+  upgradeK1P=0;
+  upgradeS1P=0;
 }
 
 function upgradeK1(){
   if(pocet>=40){
     pocet-=40;
     pridavaniPocet++;
+    upgradeK1P++;
   }
   updateDisplay()
 }
@@ -28,6 +45,7 @@ function upgradeS1(){
   if(pocet>=100){
     pocet-=100;
     pridavaniS++;
+    upgradeS1P++;
   }
   updateDisplay()
 }
