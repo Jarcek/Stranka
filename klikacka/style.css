@@ -113,16 +113,11 @@ a {
   top: 1vh;
   background: #333;
   color: white;
-  border: none;
-  display: flex;
   height: 8vh;
   width: 8vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 5vh;
-  cursor: pointer;
   border-radius: 1vh;
+  outline: none;
+  
 }
 
 .close_btn {
