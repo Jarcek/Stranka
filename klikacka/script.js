@@ -27,10 +27,10 @@ function kliknuti(){
   pocet+=pridavaniPocet;
   updateDisplay()
 
-  // pridavaniPocet=1;
-  // pridavaniS=0;
-  // upgradeK1P=0;
-  // upgradeS1P=0;
+  pridavaniPocet=1;
+  pridavaniS=0;
+  upgradeK1P=0;
+  upgradeS1P=0;
 }
 
 function upgradeK1(){
