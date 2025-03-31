@@ -183,6 +183,8 @@ a {
   justify-content: space-between;
   transition: transform 0.1s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Removes blue highlight on mobile */
+  touch-action: manipulation;
 }
 .nakup_pole:active{
   transform: scale(0.95);
