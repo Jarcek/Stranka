@@ -186,4 +186,5 @@ a {
 }
 .nakup_pole:active{
   transform: scale(0.95);
+  background-color: #c7c7c7;
 }
