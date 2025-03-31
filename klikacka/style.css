@@ -4,6 +4,7 @@ html, body {
   padding-left: 0.4vh;
   padding-right: 0.4vh;
   height: 100%;
+  user-select: none;
 }
 body {
   background-color: dimgray;
@@ -180,4 +181,9 @@ a {
   color: black;
   display: flex;
   justify-content: space-between;
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+.nakup_pole:active{
+  transform: scale(0.95);
 }
