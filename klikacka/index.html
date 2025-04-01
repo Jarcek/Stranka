@@ -36,7 +36,7 @@
 
   <div class="nakupni_cast">
     <div class="nakupni_zona">
-      <div class="nakup_pole" onclick="upgradeK1()">
+      <div class="nakup_pole" onclick="upgradeK1()" onmousedown="startMaxUpgrade(maxUpgradek1)" onmouseup="cancelMaxUpgradeHold()" ontouchstart="startMaxUpgrade(maxUpgradek1)" ontouchend="cancelMaxUpgradeHold()">
         <label>40 → +1/click</label>
         <span id="upgradeK1P">0</span>
       </div>

@@ -27,10 +27,18 @@ function kliknuti(){
   pocet+=pridavaniPocet;
   updateDisplay()
 
-  // pridavaniPocet=1;
-  // pridavaniS=0;
-  // upgradeK1P=0;
-  // upgradeS1P=0;
+  //pridavaniPocet=1;
+  //pridavaniS=0;
+  //upgradeK1P=0;
+  //upgradeS1P=0;
+}
+
+let holdTimeout;
+function startMaxUpgrade(jaky){
+  holdTimeout = setTimeout(jaky, 3000);
+}
+function cancelMaxUpgradeHold() {
+  clearTimeout(holdTimeout);
 }
 
 function upgradeK1(){
@@ -40,6 +48,13 @@ function upgradeK1(){
     upgradeK1P++;
   }
   updateDisplay()
+}
+function maxUpgradek1(){
+  let upgradeMax = Math.floor(pocet / 40);
+  pocet-=upgradeMax*40;
+  pridavaniPocet+=upgradeMax;
+  upgradeK1P+=upgradeMax;
+  updateDisplay();
 }
 function upgradeS1(){
   if(pocet>=100){

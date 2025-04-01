@@ -4,6 +4,7 @@ html, body {
   padding-left: 0.4vh;
   padding-right: 0.4vh;
   height: 100%;
+  user-select: none;
 }
 body {
   background-color: dimgray;
@@ -166,6 +167,7 @@ a {
   margin-right: 2vh;
 }
 .nakupni_zona{
+  padding-top: .5vh;
   margin: 1vh;
   border-radius: 1vh;
   height:46vh;
@@ -180,4 +182,12 @@ a {
   color: black;
   display: flex;
   justify-content: space-between;
+  transition: transform 0.1s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Removes blue highlight on mobile */
+  touch-action: manipulation;
+}
+.nakup_pole:active{
+  transform: scale(0.95);
+  background-color: #c7c7c7;
 }
