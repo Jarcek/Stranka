@@ -5,22 +5,31 @@ let pridavaniS = parseInt(localStorage.getItem('pridavaniS')) || 0
 let upgradeK1P = parseInt(localStorage.getItem('upgradeK1P')) || 0
 let upgradeS1P = parseInt(localStorage.getItem('upgradeS1P')) || 0
 
+let upgradeK2P = parseInt(localStorage.getItem('upgradeK2P')) || 0
+let upgradeS2P = parseInt(localStorage.getItem('upgradeS2P')) || 0
 
 function updateDisplay(){
   document.getElementById('pocet').textContent = Math.round(pocet).toLocaleString("cs-CZ");
-  document.getElementById('pridavaniPocet').textContent = pridavaniPocet;
-  document.getElementById('pridavaniS').textContent = pridavaniS;
+
+  document.getElementById("pridavaniPocet").textContent = Math.round(pridavaniPocet).toLocaleString("cs-CZ");  
+  document.getElementById("pridavaniS").textContent = Math.round(pridavaniS).toLocaleString("cs-CZ");  
 
   document.getElementById('upgradeK1P').textContent = upgradeK1P;
   document.getElementById('upgradeS1P').textContent = upgradeS1P;
 
-
+  document.getElementById('upgradeK2P').textContent = upgradeK2P;
+  document.getElementById('upgradeS2P').textContent = upgradeS2P;
+  
   localStorage.setItem('pocet', pocet);
   localStorage.setItem('pridavaniPocet', pridavaniPocet);
   localStorage.setItem('pridavaniS', pridavaniS);
 
   localStorage.setItem('upgradeK1P', upgradeK1P);
   localStorage.setItem('upgradeS1P', upgradeS1P);
+
+  localStorage.setItem('upgradeK2P', upgradeK2P);
+  localStorage.setItem('upgradeS2P', upgradeS2P);
+
 }
 
 function kliknuti(){
@@ -49,7 +58,7 @@ function upgradeK1(){
   }
   updateDisplay()
 }
-function maxUpgradek1(){
+function maxUpgradeK1(){
   let upgradeMax = Math.floor(pocet / 40);
   pocet-=upgradeMax*40;
   pridavaniPocet+=upgradeMax;
@@ -64,7 +73,55 @@ function upgradeS1(){
   }
   updateDisplay()
 }
+function maxUpgradeS1(){
+  let upgradeMax = Math.floor(pocet / 100);
+  pocet-=upgradeMax*100;
+  pridavaniS+=upgradeMax;
+  upgradeS1P+=upgradeMax;
+  updateDisplay();
+}
 
+//upgrady vol 2
+//
+//
+//
+//
+function upgradeK2(){
+  if(pocet>=550){
+    pocet-=550;
+    pridavaniPocet+=20
+    upgradeK2P++;
+  }
+  updateDisplay()
+}
+function maxUpgradeK2(){
+  let upgradeMax = Math.floor(pocet / 550);
+  pocet-=upgradeMax*550;
+  pridavaniPocet+=upgradeMax*550;
+  upgradeK2P+=upgradeMax;
+  updateDisplay();
+}
+function upgradeS2(){
+  if(pocet>=1200){
+    pocet-=1200;
+    pridavaniS+=200;
+    upgradeS2P++;
+  }
+  updateDisplay()
+}
+function maxUpgradeS2(){
+  let upgradeMax = Math.floor(pocet / 1200);
+  pocet-=upgradeMax*1200;
+  pridavaniS+=upgradeMax*200;
+  upgradeS2P+=upgradeMax;
+  updateDisplay();
+}
+
+
+//
+//
+//
+//
 function toggleSidebar() {
   let sidebar = document.getElementById("sidebar");
   
