@@ -93,16 +93,16 @@ function maxUpgradeK1(){
   updateDisplay();
 }
 function upgradeS1(){
-  if(pocet>=100){
-    pocet-=100;
+  if(pocet>=130){
+    pocet-=130;
     pridavaniS++;
     upgradeS1P++;
   }
   updateDisplay()
 }
 function maxUpgradeS1(){
-  let upgradeMax = Math.floor(pocet / 100);
-  pocet-=upgradeMax*100;
+  let upgradeMax = Math.floor(pocet / 130);
+  pocet-=upgradeMax*130;
   pridavaniS+=upgradeMax;
   upgradeS1P+=upgradeMax;
   updateDisplay();
@@ -129,17 +129,17 @@ function maxUpgradeK2(){
   updateDisplay();
 }
 function upgradeS2(){
-  if(pocet>=1200){
-    pocet-=1200;
-    pridavaniS+=200;
+  if(pocet>=1700){
+    pocet-=1700;
+    pridavaniS+=45;
     upgradeS2P++;
   }
   updateDisplay()
 }
 function maxUpgradeS2(){
-  let upgradeMax = Math.floor(pocet / 1200);
-  pocet-=upgradeMax*1200;
-  pridavaniS+=upgradeMax*200;
+  let upgradeMax = Math.floor(pocet / 1700);
+  pocet-=upgradeMax*1700;
+  pridavaniS+=upgradeMax*45;
   upgradeS2P+=upgradeMax;
   updateDisplay();
 }
