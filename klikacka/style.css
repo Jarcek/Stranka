@@ -191,3 +191,10 @@ a {
   transform: scale(0.95);
   background-color: #c7c7c7;
 }
+.image {
+  position: absolute;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}

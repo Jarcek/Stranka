@@ -40,7 +40,34 @@ function kliknuti(){
   //pridavaniS=0;
   //upgradeK1P=0;
   //upgradeS1P=0;
+
+
+const klikaciCast = document.querySelector('.klikaci_cast');
+    
+
+const img = document.createElement('img');
+img.src = 'kebabos.png';
+img.className = 'image';
+
+
+img.style.left = `${event.clientX - klikaciCast.getBoundingClientRect().left}px`;
+img.style.top = `${event.clientY - klikaciCast.getBoundingClientRect().top}px`;
+
+
+klikaciCast.appendChild(img);
+
+
+setTimeout(() => {
+    img.style.transform = 'translateY(-10vh)';
+    img.style.opacity = '0';
+}, 10); 
+
+setTimeout(() => {
+    img.remove();
+}, 500);
 }
+
+
 
 let holdTimeout;
 function startMaxUpgrade(jaky){
