@@ -14,11 +14,11 @@ function updateDisplay(){
   document.getElementById("pridavaniPocet").textContent = Math.round(pridavaniPocet).toLocaleString("cs-CZ");  
   document.getElementById("pridavaniS").textContent = Math.round(pridavaniS).toLocaleString("cs-CZ");  
 
-  document.getElementById('upgradeK1P').textContent = upgradeK1P;
-  document.getElementById('upgradeS1P').textContent = upgradeS1P;
+  document.getElementById('upgradeK1P').textContent = upgradeK1P.toLocaleString("cs-CZ");;
+  document.getElementById('upgradeS1P').textContent = upgradeS1P.toLocaleString("cs-CZ");;
 
-  document.getElementById('upgradeK2P').textContent = upgradeK2P;
-  document.getElementById('upgradeS2P').textContent = upgradeS2P;
+  document.getElementById('upgradeK2P').textContent = upgradeK2P.toLocaleString("cs-CZ");;
+  document.getElementById('upgradeS2P').textContent = upgradeS2P.toLocaleString("cs-CZ");;
   
   localStorage.setItem('pocet', pocet);
   localStorage.setItem('pridavaniPocet', pridavaniPocet);
