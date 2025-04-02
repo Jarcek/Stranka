@@ -35,7 +35,7 @@ function updateDisplay(){
 function kliknuti(){
   pocet+=pridavaniPocet;
   updateDisplay()
-  pridavaniS= upgradeS1P+upgradeS2P*45;
+  //pridavaniS= upgradeS1P+upgradeS2P*45;
   //pridavaniPocet=1;
   //pridavaniS=0;
   //upgradeK1P=0;
