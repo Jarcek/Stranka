@@ -71,7 +71,7 @@ setTimeout(() => {
 
 let holdTimeout;
 function startMaxUpgrade(jaky){
-  holdTimeout = setTimeout(jaky, 3000);
+  holdTimeout = setTimeout(jaky, 2000);
 }
 function cancelMaxUpgradeHold() {
   clearTimeout(holdTimeout);
