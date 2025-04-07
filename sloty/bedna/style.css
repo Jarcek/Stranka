@@ -44,3 +44,7 @@ body {
   background: #444;
   transform: translateX(-50%) scale(1.15);
 }
+.spin:active {
+  background: #555;
+  transform: translateX(-50%) scale(0.95);
+}
