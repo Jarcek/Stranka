@@ -1,0 +1,38 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #111;
+  color: white;
+}
+.mat{
+  margin:50vh auto;
+  padding: 10vh;
+  background-color: #222;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+.spin {
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: #333;
+  height: 8vh;
+  width: 8vh;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 1vh rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  transform-origin: center;
+}
+.spin:hover {
+  background: #444;
+  transform: translateX(-50%) scale(1.15);
+}
