@@ -27,8 +27,9 @@ body {
   background: #333;
   height: 8vh;
   width: 8vh;
-  font-weight: bold;
-  font-size: 2rem;
+  font-size: 3.2vh;
+  font-weight: normal;
+  line-height: 1;
   border-radius: 50%;
   border: none;
   box-shadow: 0 0 1vh rgba(255, 255, 255, 0.2);
