@@ -23,7 +23,7 @@ body {
   font-size: 1.2em;
 }
 .radio-option:active{
-  transform: scale(1.5);
+  transform: scale(1.15);
 }
 .radio-option input[type="radio"] {
   width: 3vh;
